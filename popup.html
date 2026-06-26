@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>مدرب القيادة</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+      <div class="container">
+                <div class="header">
+                              <h1>🚗 مدرب القيادة</h1>
+                            <div class="header-controls">
+                                            <button id="settingsBtn" class="btn-settings">⚙️</button>button>
+                                            <button id="refreshBtn" class="btn-refresh">🔄</button>button>
+                            </div>div>
+                </div>div>
+      
+              <div class="date-time-section">
+                          <div class="date-display" id="dateDisplay">التاريخ</div>div>
+                          <div class="time-display" id="timeDisplay">00:00:00</div>div>
+              </div>div>
+      
+              <div class="current-session-section">
+                          <h2>الحصة الحالية</h2>
+                          
+                          <div class="student-info">
+                                          <div class="info-row">
+                                                              <span class="label">اسم الطالب:</span>span>
+                                                              <span class="value" id="studentName">-</span>span>
+                                          </div>div>
+                                          <div class="info-row">
+                                                              <span class="label">رقم الطالب ID:</span>span>
+                                                              <span class="value" id="studentId">-</span>span>
+                                          </div>div>
+                                          <div class="info-row">
+                                                              <span class="label">وقت الحصة:</span>span>
+                                                              <span class="value" id="sessionTime">-</span>span>
+                                          </div>div>
+                          </div>div>
+              
+                          <div class="exercise-info">
+                                          <div class="info-row">
+                                                              <span class="label">آخر تمرين:</span>span>
+                                                              <span class="value" id="lastExercise">-</span>span>
+                                          </div>div>
+                                          <div class="info-row">
+                                                              <span class="label">التمرين الحالي:</span>span>
+                                                              <span class="value current-exercise" id="currentExercise">-</span>span>
+                                          </div>div>
+                                          <div class="info-row">
+                                                              <span class="label">الحضور السابق:</span>span>
+                                                              <span class="value attendance" id="attendance">-</span>span>
+                                          </div>div>
+                          </div>div>
+              
+                          <div class="timer-section">
+                                          <div class="timer-display" id="timerDisplay">45:00</div>div>
+                                          <div class="timer-bar-container">
+                                                              <div class="timer-bar" id="timerBar" style="width: 100%"></div>div>
+                                          </div>div>
+                                          <div class="timer-status" id="timerStatus">جاهز للبدء</div>div>
+                          </div>div>
+              
+                          <div class="timer-controls">
+                                          <button id="startBtn" class="btn btn-start">▶️ بدء</button>button>
+                                          <button id="pauseBtn" class="btn btn-pause" disabled>⏸️ إيقاف مؤقت</button>button>
+                                          <button id="resetBtn" class="btn btn-reset">🔄 إعادة تعيين</button>button>
+                          </div>div>
+              </div>div>
+      
+              <div class="sessions-list-section">
+                          <h2>جدول الحصص اليومي</h2>
+                          <div class="sessions-list" id="sessionsList">
+                                          <p class="empty-message">لا توجد حصص مسجلة</p>p>
+                          </div>div>
+              </div>div>
+      
+              <div class="add-session-section">
+                          <button id="addSessionBtn" class="btn btn-add">➕ إضافة حصة جديدة</button>button>
+              </div>div>
+      </div>div>
+
+    <div id="sessionModal" class="modal hidden">
+            <div class="modal-content">
+                        <div class="modal-header">
+                                        <h2>إضافة حصة جديدة</h2>
+                                        <button id="closeModalBtn" class="close-btn">&times;</button>button>
+                        </div>div>
+                        
+                        <form id="sessionForm" class="session-form">
+                                        <div class="form-group">
+                                                            <label for="studentNameInput">اسم الطالب:</label>label>
+                                                            <input type="text" id="studentNameInput" required>
+                                        </div>div>
+                                        <div class="form-group">
+                                                            <label for="studentIdInput">رقم الطالب ID:</label>label>
+                                                            <input type="text" id="studentIdInput" required>
+                                        </div>div>
+                                        <div class="form-group">
+                                                            <label for="sessionTimeInput">وقت الحصة:</label>label>
+                                                            <input type="time" id="sessionTimeInput" required>
+                                        </div>div>
+                                        <div class="form-group">
+                                                            <label for="lastExerciseInput">آخر تمرين:</label>label>
+                                                            <input type="text" id="lastExerciseInput">
+                                        </div>div>
+                                        <div class="form-group">
+                                                            <label for="currentExerciseInput">التمرين الحالي:</label>label>
+                                                            <input type="text" id="currentExerciseInput" required>
+                                        </div>div>
+                                        <div class="form-group">
+                                                            <label for="attendanceSelect">الحضور السابق:</label>label>
+                                                            <select id="attendanceSelect">
+                                                                                    <option value="حاضر">حاضر</option>option>
+                                                                                    <option value="غائب">غائب</option>option>
+                                                                                    <option value="متأخر">متأخر</option>option>
+                                                            </select>select>
+                                        </div>div>
+                                        <div class="form-actions">
+                                                            <button type="submit" class="btn btn-save">💾 حفظ</button>button>
+                                                            <button type="button" id="cancelBtn" class="btn btn-cancel">❌ إلغاء</button>button>
+                                        </div>div>
+                        </form>form>
+            </div>div>
+    </div>div>
+
+    <script src="popup.js"></script>
+</body>
+</html>html></h2></h1>
+</body></title>
+  </head>
