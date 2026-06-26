@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "مدرب القيادة - إدارة الحصص التدريبية",
+    "version": "1.0.0",
+    "description": "أداة لمدربي القيادة لإدارة الحصص مع عداد متقدم",
+    "permissions": [
+          "storage",
+          "activeTab",
+          "scripting"
+    ],
+    "host_permissions": [
+          "*://*/*"
+    ],
+    "action": {
+          "default_popup": "popup.html",
+          "default_title": "مدرب القيادة"
+    },
+    "options_page": "options.html",
+    "background": {
+          "service_worker": "background.js"
+    }
+}
